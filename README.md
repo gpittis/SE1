@@ -3,7 +3,7 @@
 <p align=center>
 <img src="https://github.com/user-attachments/assets/22d57fe2-2ead-4cf7-8d31-adb80b4c4298" height=100px width:auto />
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-<img src="https://www.openapis.org/wp-content/uploads/sites/3/2018/02/OpenAPI_Logo_Stacked_White.png" height=100px width:auto />
+<img src="https://github.com/user-attachments/assets/267e2765-1c5d-4a7a-8193-048a511043e9" height=100px width:auto />
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 <img src="https://static-00.iconduck.com/assets.00/swagger-icon-1024x1024-09037v1r.png" height=100px width:auto />
 </p>
