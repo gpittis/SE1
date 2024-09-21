@@ -1,7 +1,7 @@
 # Software Engineering 1 Projects 2023-24
 
 <p align=center>
-<img src="https://lab.issel.ee.auth.gr/wp-content/uploads/2021/06/logo.png" height=100px width:auto />
+<img src="https://github.com/user-attachments/assets/8c465c58-b05a-483e-8f39-0d1f1a097efb" height=100px width:auto />
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 <img src="https://www.openapis.org/wp-content/uploads/sites/3/2018/02/OpenAPI_Logo_Stacked_White.png" height=100px width:auto />
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
