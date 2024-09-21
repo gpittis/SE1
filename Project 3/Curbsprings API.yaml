@@ -1,0 +1,395 @@
+openapi: 3.0.0
+info:
+  title: Curbsprings API
+  description: API for managing parking spots, reservations, users, and payments.
+  version: 1.0.0
+  contact:
+    name:
+      Curbspring Team
+    #email: atsarnad@ece.auth.gr
+    #email: gkpittis@ece.auth.gr
+    #email: anasgour@ece.auth.gr
+    #email: afotiadis@ece.auth.gr
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+    
+servers:
+  - url: https://api.example.com
+    description: Testing server
+
+tags:
+- name: Spot
+  description: Spot endpoints
+- name: LicensePlate
+  description: LicensePlate endpoints
+- name: Reservation
+  description: Reservation endpoints
+- name: SpotOwner
+  description: SpotOwner endpoints
+- name: Payment
+  description: Payment endpoints
+  
+paths:
+  /spot:
+    get:
+      summary: Retrieve all available parking spots
+      operationId: getSpots
+      description: "FR1: The user must be able to view all available parking spots"
+      tags:
+        - Spot
+      responses:
+        '200':
+          description: A list of parking spots
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ParkingSpot'
+    post:
+      summary: Add a new parking spot
+      operationId: createSpot
+      description: "FR12: The spot owner must be able to add a new parking spot to the system"
+      tags:
+        - Spot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ParkingSpot'
+      responses:
+        '201':
+          description: Parking spot added successfully
+
+  /spot/{id}:
+    put:
+      summary: Modify the information of a specific parking spot
+      description: "FR13: The spot owner must be able to modify the information of their spots"
+      operationId: modifySpot
+      tags:
+        - Spot
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: address
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: type
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: charger
+          in: query
+          required: true
+          schema:
+            type: boolean
+      requestBody:
+        description: Parking spot object to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ParkingSpot'
+      responses:
+        '200':
+          description: Parking spot updated successfully
+    delete:
+      summary: Remove a specific parking spot from the system
+      description: "FR14: The spot owner must be able to remove a spot from the system"
+      operationId: removeSpot
+      tags:
+        - Spot
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Parking spot removed successfully
+
+  /licensePlate:
+    post:
+      summary: Register vehicle's license plate
+      description: "FR4: The user must be able to register their vehicle's license plate in the system"
+      operationId: registerPlate
+      tags:
+        - LicensePlate
+      requestBody:
+        description: License plate to register
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LicensePlate'
+      responses:
+        '201':
+          description: License plate registered successfully
+    put:
+      summary: Modify vehicle's license plate
+      description: "FR5: The user must be able to modify their vehicle's license plate in the system"
+      operationId: modifyPlate
+      tags:
+        - LicensePlate
+      requestBody:
+        description: License plate object to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LicensePlate'
+      responses:
+        '200':
+          description: License plate updated successfully
+
+  /reservation:
+    post:
+      summary: Create a new reservation
+      description: "FR6: The user must be able to reserve a parking spot"
+      operationId: makeReservation
+      tags:
+        - Reservation
+      requestBody:
+        description: Reservation object to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reservation'
+      responses:
+        '201':
+          description: Reservation created successfully
+
+  /reservation/{id}:
+    put:
+      summary: Modify a specific reservation
+      description: "FR7: The user must be able to manage their reservation in the system"
+      operationId: modifyReservation
+      tags:
+        - Reservation
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: spotId
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: userId
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: startTime
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: duration
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+      requestBody:
+        description: Reservation object to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reservation'
+      responses:
+        '200':
+          description: Reservation updated successfully
+    delete:
+      summary: Cancel a specific reservation
+      description: "FR7: The user must be able to manage their reservation in the system"
+      operationId: deleteReservation
+      tags:
+        - Reservation
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Reservation cancelled successfully
+
+  /spotowner:
+    post:
+      summary: Add a new spot owner
+      description: "FR15: The system administrator must be able to add a spot owner to the system"
+      operationId: addSpotOwner
+      tags:
+        - SpotOwner
+      requestBody:
+        description: Spot owner object to add
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpotOwner'
+      responses:
+        '201':
+          description: Spot owner added successfully
+
+  /spot/search:
+    get:
+      summary: Search for available parking spots
+      description: "FR2: The user must be able to search for available parking spots in the system"
+      operationId: searchSpot
+      tags:
+        - Spot
+      parameters:
+        - name: address
+          in: query
+          required: true
+          allowEmptyValue: true
+          schema:
+            type: string
+        - name: type
+          in: query
+          required: true
+          allowEmptyValue: true
+          schema:
+            type: string
+        - name: charger
+          in: query
+          required: true
+          allowEmptyValue: true
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: A list of available parking spots matching the search criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ParkingSpot'
+
+  /payment:
+    post:
+      summary: Process a payment through the payment gateway
+      description: "FR8: The user must be able to make a payment through the payment gateway"
+      operationId: makePayment
+      tags:
+        - Payment
+      requestBody:
+        description: Payment object to process
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Payment'
+      responses:
+        '201':
+          description: Payment processed successfully
+
+components:
+  schemas:
+    
+    ParkingSpot:
+      type: object
+      properties:
+        id:
+          type: integer
+        address:
+          type: string
+        type:
+          type: string
+        chargerAvailability:
+          type: boolean
+    
+    LicensePlate:
+      type: object
+      properties:
+        userId:
+          type: integer
+        licensePlate:
+          type: string
+          
+    Reservation:
+      type: object
+      properties:
+        id:
+          type: integer
+        spotId:
+          type: integer
+        userId:
+          type: integer
+        startTime:
+          type: string
+          format: date-time
+        duration:
+          type: string
+          format: date-time
+        date:
+          type: string
+          format: date
+          
+    SpotOwner:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        idNumber:
+          type: string
+        phone:
+          type: number
+        spots:
+          type: array
+          items:
+            $ref: '#/components/schemas/ParkingSpot' 
+    
+    Payment:
+      type: object
+      properties:
+        id:
+          type: integer
+        user:
+          $ref: '#/components/schemas/User'
+        amount:
+          type: integer
+          format: float
+    
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        licensePlate:
+          $ref: '#/components/schemas/LicensePlate' 
+        reservation:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reservation' 
