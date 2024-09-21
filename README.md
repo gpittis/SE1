@@ -34,6 +34,6 @@ Project 3 includes designing an API for the app, based on the FRs and NFRs chose
 
 ## The rest of the team
 
-- [Giorgos Pittis](https://github.com/gkpittis)
+- [Thanasis Tsarnadelis](https://github.com/tsarnadelis)
 - [Alexandros Fotiadis](https://github.com/afotiadis)
 - [Anastasis Gourdomichalis](https://github.com/anasgourd)
