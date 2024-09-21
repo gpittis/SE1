@@ -5,7 +5,7 @@
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 <img src="https://github.com/user-attachments/assets/267e2765-1c5d-4a7a-8193-048a511043e9" height=100px width:auto />
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-<img src="https://static-00.iconduck.com/assets.00/swagger-icon-1024x1024-09037v1r.png" height=100px width:auto />
+<img src="https://github.com/user-attachments/assets/2cb1ae04-1a5d-4480-8ac4-296fc2635162" height=100px width:auto />
 </p>
 
 ## Overview
