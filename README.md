@@ -1,7 +1,7 @@
 # Software Engineering 1 Projects 2023-24
 
 <p align=center>
-<img src="https://github.com/user-attachments/assets/8c465c58-b05a-483e-8f39-0d1f1a097efb" height=100px width:auto />
+<img src="https://github.com/user-attachments/assets/22d57fe2-2ead-4cf7-8d31-adb80b4c4298" height=100px width:auto />
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 <img src="https://www.openapis.org/wp-content/uploads/sites/3/2018/02/OpenAPI_Logo_Stacked_White.png" height=100px width:auto />
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
