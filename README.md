@@ -1,11 +1,11 @@
 # Software Engineering 1 Projects 2023-24
 
 <p align=center>
-<img src="https://github.com/user-attachments/assets/22d57fe2-2ead-4cf7-8d31-adb80b4c4298" height=100px width:auto />
+<img src="https://github.com/user-attachments/assets/82054402-8a7c-4169-b487-45459a1a8ffb" height=100px width:auto />
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-<img src="https://github.com/user-attachments/assets/267e2765-1c5d-4a7a-8193-048a511043e9" height=100px width:auto />
+<img src="https://github.com/user-attachments/assets/05c6720b-ea29-4b04-9185-771bddad251c" height=100px width:auto />
   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-<img src="https://github.com/user-attachments/assets/2cb1ae04-1a5d-4480-8ac4-296fc2635162" height=100px width:auto />
+<img src="https://github.com/user-attachments/assets/769ad7c1-beee-4bc9-a786-10e4763cfeb1" height=100px width:auto />
 </p>
 
 ## Overview
