@@ -1,4 +1,4 @@
-# Software Engineering 1 Projects 2023-24
+# Software Engineering 1 Projects 2023-2
 
 <p align=center>
 <img src="https://github.com/user-attachments/assets/82054402-8a7c-4169-b487-45459a1a8ffb" height=100px width:auto />
